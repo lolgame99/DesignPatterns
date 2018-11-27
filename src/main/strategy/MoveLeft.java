@@ -12,7 +12,7 @@ public class MoveLeft implements IMoveStrategy {
 
     @Override
     public void move() {
-        this.y--;
+        this.x--;
     }
 
     @Override

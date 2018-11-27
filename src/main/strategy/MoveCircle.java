@@ -3,27 +3,17 @@ package main.strategy;
 import main.interfaces.IMoveStrategy;
 
 public class MoveCircle implements IMoveStrategy {
-    int x,y, distance, startX, startY;
+    int x,y,dir;
 
-    public MoveCircle(int x, int y, int distance) {
+    public MoveCircle(int x, int y) {
         this.x = x;
         this.y = y;
-        this.distance = distance;
-        this.startX = x;
-        this.startY = y;
+        this.dir = 3;
     }
 
     @Override
     public void move() {
-        if (this.y > this.startY+this.distance){
-            this.x++;
-        } else if (this.x > this.startY+this.distance){
-            this.y--;
-        } else if (this.y < this. startY){
-            this.x--;
-        } else {
-            this.y++;
-        }
+
     }
 
     @Override
