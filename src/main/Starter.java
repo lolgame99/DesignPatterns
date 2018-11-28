@@ -3,6 +3,7 @@ package main;
 import main.actors.Circle;
 import main.actors.Rectangle;
 import main.actors.ShapeActor;
+import main.actors.SingletonScore;
 import main.interfaces.IActor;
 import main.interfaces.IMoveStrategy;
 import main.interfaces.Observer;
@@ -58,6 +59,9 @@ public class Starter extends BasicGame {
         if (this.rec.getIMoveStrategy().getX() > WIDTH-100) {
             this.rec.setIMoveStrategy(new MoveDown(this.rec.getIMoveStrategy().getX(), this.rec.getIMoveStrategy().getY()));
             this.rec.getIMoveStrategy().setX(700);
+            SingletonScore.getInstance().incrementScore();
+            System.out.println(SingletonScore.getInstance().getScore());
+
         } else if (this.rec.getIMoveStrategy().getY() > HEIGHT-100) {
             this.rec.setIMoveStrategy(new MoveLeft(this.rec.getIMoveStrategy().getX(), this.rec.getIMoveStrategy().getY()));
             this.rec.getIMoveStrategy().setY(500);
